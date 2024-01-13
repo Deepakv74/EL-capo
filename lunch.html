@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>El Chapo</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="favicon" href="elchapo.ico">
+        <style>
+          body {
+            background-color: grey;
+            background-image: url('Asset/menu.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+          }
+        </style>
+        <script>
+            // Cart object to store the items
+            var cart = [];
+        
+            // Function to add an item to the cart
+            function addToCart(itemName, price) {
+              var item = {
+                name: itemName,
+                price: price
+              };
+        
+              cart.push(item);
+        
+              // Update the cart count and display the items
+              document.getElementById("cartCount").innerText = cart.length;
+              displayCartItems();
+            }
+        
+            // Function to display the cart items
+            function displayCartItems() {
+              var cartItemsElement = document.getElementById("cartItems");
+              cartItemsElement.innerHTML = "";
+        
+              for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var itemElement = document.createElement("li");
+                itemElement.innerText = item.name + " - ₹" + item.price;
+                cartItemsElement.appendChild(itemElement);
+              }
+            }
+          </script>
+ 
+      </head>
+      <img class="logo"src="Asset/icon.png" alt="Image">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><button id="button">Home</button></a>
+                <a href="menu.html"><button>Menu</button></a>
+                <a href="aboutus.html"><button>About US</button></a>
+                <a href="contact.html"><button>Contact Us</button></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center>
+            <section id="hero">
+            <h1>Welcome to El Chapo</h1>
+            <p>Hey Chapo's have some food and drinks </p>
+            <p>Take some light mood enjoy food or snack in the pleasent ambiance</p>
+            <h2><b>Lunch</b></h2>			
+            </section>
+        </center>
+        <div class="cart" id="cartCount" img class="logo" src="Asset/cart.png" alt="Image"></div>
+        <h2 class="cart"><img class="logo" src="Asset/cart.png" alt="Image"></h2>
+        <ul id="cartItems">Order name</ul>
+        <div class="menu">
+            <div class="item">
+                <a><img src="Asset\kichadi.jpeg" alt="Image"></a>
+                <h3>Kichadi</h3>
+                <p><i><b>Kichadi With papad</b></i></p>
+                <p>Price: ₹120</p>
+                <button onclick="addToCart('Kichadi', 120)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\aloo.jpg" alt="Image"></a>
+                <h3>Aloo Paratha</h3>
+                <p><i><b>2's Aloo Paratha with Aachar and Dhai</b></i></p>
+                <p>Price: ₹190</p>
+                <button onclick="addToCart('Aloo Paratha', 190)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\Masaladosa.jpg" alt="Image"></a>
+                <h3>Masaladosa</h3>
+                <p><i><b>2's Masaladosa with Green chutney and Sambhar</b></i></p>
+                <p>Price: ₹180</p>
+                <button onclick="addToCart('Masaladosa', 180)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\thali.jpeg" alt="Image"></a>
+                <h3>Thali</h3>
+                <p><i><b>Thali with Aachar and papad</b></i></p>
+                <p>Price: ₹220</p>
+                <button onclick="addToCart('Thali', 220)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\ricethali.jpeg" alt="Image"></a>
+                <h3>Rice Thali</h3>
+                <p><i><b>Rice Thali with Aachar and Dhai</b></i></p>
+                <p>Price: ₹180</p>
+                <button onclick="addToCart('Rice Thali', 180)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\puribhaji.jpeg" alt="Image"></a>
+                <h3>Puri Bhaji</h3>
+                <p><i><b>Puri Bhaji with Aachar and Dhai</b></i></p>
+                <p>Price: ₹210</p>
+                <button onclick="addToCart('Puri Bhaji', 210)">Add to Cart</button>
+            </div>
+            
+        </div>
+        <footer>
+            <center>
+             <p>About us</p>
+             <p>The Small food cartel. We offer the classic indian menu</p>
+             <P> Developed by Bullet Guy (Deepak Vishwakarma)</p>
+            </center>
+        </footer>
+    </main>
+</body>

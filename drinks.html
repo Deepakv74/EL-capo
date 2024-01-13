@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>El Chapo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="favicon" href="elchapo.ico">
+    <style>
+        body {
+            background-color: grey;
+            background-image: url('Asset/menu.jpg');
+            background-size: cover;
+            background-repeat: repeat;
+        }
+    </style>
+    <script>
+        // Cart object to store the items
+        var cart = [];
+    
+        // Function to add an item to the cart
+        function addToCart(itemName, price) {
+          var item = {
+            name: itemName,
+            price: price
+          };
+    
+          cart.push(item);
+    
+          // Update the cart count and display the items
+          document.getElementById("cartCount").innerText = cart.length;
+          displayCartItems();
+        }
+    
+        // Function to display the cart items
+        function displayCartItems() {
+          var cartItemsElement = document.getElementById("cartItems");
+          cartItemsElement.innerHTML = "";
+    
+          for (var i = 0; i < cart.length; i++) {
+            var item = cart[i];
+            var itemElement = document.createElement("li");
+            itemElement.innerText = item.name + " - ₹" + item.price;
+            cartItemsElement.appendChild(itemElement);
+          }
+
+        }
+      </script>
+    
+</head>
+<img class="logo"src="Asset/icon.png" alt="Image">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><button id="button">Home</button></a>
+                <a href="menu.html"><button>Menu</button></a>
+                <a href="aboutus.html"><button>About US</button></a>
+                <a href="contact.html"><button>Contact Us</button></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center>
+            <section id="hero">
+            <h1>Welcome to El Chapo</h1>
+            <p>Hey Chapo's have some food and drinks </p>
+            <p>Take some light mood enjoy food or snack in the pleasent ambiance</p>
+            <h2><b>Drinks</b></h2>			
+            </section>
+        </center>
+        <div class="cart" id="cartCount" img class="logo" src="Asset/cart.png" alt="Image"></div>
+        <h2 class="cart"><img class="logo" src="Asset/cart.png" alt="Image"></h2>
+        <ul id="cartItems">Order name</ul>
+        <div class="menu">
+            <div class="item">
+                <a><img src="Asset\orangejuice.jpeg" alt="Image"></a>
+                <h3>Orange Juice</h3>
+                <p><i><b>1 Glass</b></i></p>
+                <p>Price: ₹70</p>
+                <button onclick="addToCart('Orange Juice', 70)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\coffee.jpeg" alt="Image"></a>
+                <h3>Coffee</h3>
+                <p><i><b>1 Cup Coffee</b></i></p>
+                <p>Price: ₹90</p>
+                <button onclick="addToCart('Coffee', 90)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\milkshake.jpeg" alt="Image"></a>
+                <h3>MilkShake</h3>
+                <p><i><b>1 Glass with choclate stick</b></i></p>
+                <p>Price: ₹100</p>
+                <button onclick="addToCart('MilkShake', 100)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\limesoda.jpeg" alt="Image"></a>
+                <h3>Lime Soda</h3>
+                <p><i><b>1 Glass Lime soda</b></i></p>
+                <p>Price: ₹95</p>
+                <button onclick="addToCart('Lime Soda', 95)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <a><img src="Asset\chai.jpeg" alt="Image"></a>
+                <h3>Chai</h3>
+                <p><i><b>Chai with toast</b></i></p>
+                <p>Price: ₹50</p>
+                <button onclick="addToCart('Chai', 50)">Add to Cart</button>
+            </div>
+        </div>
+        <footer>
+            <center>
+             <p>About us</p>
+             <p>The Small food cartel. We offer the classic indian menu</p>
+             <P> Developed by Bullet Guy (Deepak Vishwakarma)</p>
+            </center>
+        </footer>
+    </main>
+</body>
